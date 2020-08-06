@@ -16,11 +16,9 @@ Map<int, Color> color = {
   900: Color.fromRGBO(164, 198, 57, 1),
 };
 MaterialColor colorCustom = MaterialColor(0xff03b899, color);
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+
+class Profile extends StatelessWidget {
   
   // This widget is the root of your application.
   @override
