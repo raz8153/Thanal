@@ -1,7 +1,8 @@
-import 'package:Thanal/pages/donation.dart';
+import 'package:Thanal/pages/Donations/donations.dart';
 import 'package:Thanal/pages/home.dart';
 import 'package:Thanal/pages/profile.dart';
 import 'package:flutter/material.dart';
+import 'common.dart';
 
 class UserHome extends StatefulWidget {
   UserHome({Key key}) : super(key: key);
@@ -11,15 +12,16 @@ class UserHome extends StatefulWidget {
 
 class _UserHomeState extends State<UserHome> {
   int _selectedIndex = 0;
-  var style = TextStyle(fontFamily:"Poppins");
+  var style = TextStyle(fontFamily: "Poppins");
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      print(index);
     });
   }
 
-  int _index = 0;
+  int _index = 1;
   @override
   Widget build(BuildContext context) {
     Widget child;
@@ -33,31 +35,50 @@ class _UserHomeState extends State<UserHome> {
       case 2:
         child = Profile();
         break;
-
     }
-
     return Scaffold(
-        backgroundColor: Colors.transparent,
+        appBar: PreferredSize(
+          preferredSize: Size(MediaQuery.of(context).size.width, 55),
+          // child: AppBarUpdator(),
+          child: AppBar(
+            elevation: 0,
+            backgroundColor: colorOne,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(rad),
+              bottomRight: Radius.circular(rad),
+            )),
+            title: Row(
+              children: <Widget>[
+                Text(
+                  "Thanal",
+                  style: TextStyle(fontWeight: FontWeight.w900),
+                ),
+                Text(
+                  "Donate",
+                  style: TextStyle(fontWeight: FontWeight.w400),
+                )
+              ],
+            ),
+          ),
+        ),
+        backgroundColor: Colors.white,
         extendBody: true,
         extendBodyBehindAppBar: true,
-
-        body:
-        SizedBox.expand(child: child),
-
-
+        body: child,
         bottomNavigationBar: Container(
-            padding: EdgeInsets.symmetric(horizontal:8, vertical:2),
+            height: 65,
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(16), topLeft: Radius.circular(16)),
-
+              // borderRadius: BorderRadius.only(
+              //     topRight: Radius.circular(16), topLeft: Radius.circular(16)),
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16.0),
-                topRight: Radius.circular(16.0),
-              ),
+              // borderRadius: BorderRadius.only(
+              //   topLeft: Radius.circular(16.0),
+              //   topRight: Radius.circular(16.0),
+              // ),
               child: BottomNavigationBar(
                 backgroundColor: Colors.white,
                 items: <BottomNavigationBarItem>[
@@ -67,27 +88,28 @@ class _UserHomeState extends State<UserHome> {
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.attach_money),
-                    title: Text('Donate', style: style,),
+                    title: Text(
+                      'Donate',
+                      style: style,
+                    ),
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.person),
                     title: Text('Profile', style: style),
                   ),
-
                 ],
-                selectedItemColor: Colors.amber[600],
-                unselectedItemColor: Colors.grey,
+                selectedItemColor: colorOne,
+                unselectedItemColor: colorOne.withOpacity(0.4),
                 unselectedIconTheme: IconThemeData(size: 28),
-                onTap: (newIndex) => setState(() => _index = newIndex),
+                onTap: (newIndex) => setState(() {
+                  _index = newIndex;
+                  _onItemTapped(newIndex);
+                }),
                 currentIndex: _index,
                 showUnselectedLabels: false,
                 iconSize: 30,
                 type: BottomNavigationBarType.fixed,
-
               ),
-            )
-
-
-        ));
+            )));
   }
 }
