@@ -1,7 +1,9 @@
-import 'package:Thanal/pages/Donations/donations.dart';
-import 'package:Thanal/pages/home.dart';
-import 'package:Thanal/pages/profile.dart';
+import 'Contribute/contribute.dart';
+import 'Explore/explore.dart';
+import 'file:///C:/Users/Aju/Desktop/PROJECTS/THANAL/Thanal/lib/pages/Home/home.dart';
+import 'file:///C:/Users/Aju/Desktop/PROJECTS/THANAL/Thanal/lib/pages/Profile/donationHistory.dart';
 import 'package:flutter/material.dart';
+import 'Notification/notification.dart';
 import 'common.dart';
 
 class UserHome extends StatefulWidget {
@@ -11,28 +13,39 @@ class UserHome extends StatefulWidget {
 }
 
 class _UserHomeState extends State<UserHome> {
-  int _selectedIndex = 0;
+//  int _selectedIndex = 0;
   var style = TextStyle(fontFamily: "Poppins");
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      print(index);
-    });
-  }
+//  void _onItemTapped(int index) {
+//    setState(() {
+//      _selectedIndex = index;
+//      print(index);
+//    });
+//  }
 
-  int _index = 1;
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
-    Widget child;
+    Widget child = Contribute();
     switch (_index) {
       case 0:
+        print("raz0");
         child = Home();
         break;
       case 1:
-        child = Donations();
+        print("raz1");
+        child = Explore();
         break;
       case 2:
+        print("raz2");
+        child = Contribute();
+        break;
+      case 3:
+        print("raz3");
+        child = Notifications();
+        break;
+      case 4:
+        print("raz4");
         child = Profile();
         break;
     }
@@ -42,7 +55,7 @@ class _UserHomeState extends State<UserHome> {
           // child: AppBarUpdator(),
           child: AppBar(
             elevation: 0,
-            backgroundColor: colorOne,
+            backgroundColor: colorTwo,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(rad),
@@ -52,21 +65,22 @@ class _UserHomeState extends State<UserHome> {
               children: <Widget>[
                 Text(
                   "Thanal",
-                  style: TextStyle(fontWeight: FontWeight.w900),
+                  style: TextStyle(fontWeight: FontWeight.w900, color: colorOne),
                 ),
                 Text(
                   "Donate",
-                  style: TextStyle(fontWeight: FontWeight.w400),
+                  style: TextStyle(fontWeight: FontWeight.w400, color: colorOne),
                 )
               ],
             ),
           ),
         ),
-        backgroundColor: Colors.white,
+//        backgroundColor: Colors.white,
         extendBody: true,
         extendBodyBehindAppBar: true,
         body: child,
-        bottomNavigationBar: Container(
+        bottomNavigationBar:
+        Container(
             height: 65,
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
             decoration: BoxDecoration(
@@ -87,11 +101,19 @@ class _UserHomeState extends State<UserHome> {
                     title: Text('Home', style: style),
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.attach_money),
+                    icon: Icon(Icons.search),
                     title: Text(
-                      'Donate',
+                      'Explore',
                       style: style,
                     ),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.add_circle_outline),
+                    title: Text('Contribute', style: style),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.notifications),
+                    title: Text('Notify', style: style),
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.person),
@@ -101,11 +123,12 @@ class _UserHomeState extends State<UserHome> {
                 selectedItemColor: colorOne,
                 unselectedItemColor: colorOne.withOpacity(0.4),
                 unselectedIconTheme: IconThemeData(size: 28),
-                onTap: (newIndex) => setState(() {
-                  _index = newIndex;
-                  _onItemTapped(newIndex);
-                }),
                 currentIndex: _index,
+                onTap: (int newIndex) => setState(() {
+                  _index = newIndex;
+//                  _onItemTapped(newIndex);
+                }),
+//                currentIndex: _index,
                 showUnselectedLabels: false,
                 iconSize: 30,
                 type: BottomNavigationBarType.fixed,

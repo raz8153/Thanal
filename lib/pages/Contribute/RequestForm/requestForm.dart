@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Donations extends StatelessWidget {
+class RequestForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("DONATIONS"),
-      ),
+        body:Text("Request form from meghna")
     );
   }
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class UserLogin extends StatelessWidget {
+class OrganisationProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Login  Page : Aleena"),
+      body: Text("Organisation profile : Steve"),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'widgets.dart';
-import '../common.dart';
+import 'package:Thanal/pages/common.dart';
 
 class Donations extends StatefulWidget {
   //comment

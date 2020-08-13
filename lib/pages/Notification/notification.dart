@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class UserLogin extends StatelessWidget {
+class Notifications extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Login  Page : Aleena"),
+      body: Text("Notification  Page : Not decided yet"),
     );
   }
 }
