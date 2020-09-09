@@ -4,7 +4,7 @@ class GiveAwayForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Text("Give away form from meghna")
+      body:Text("Give away form from meghna",style: TextStyle(fontSize: 50))
     );
   }
 }
