@@ -18,8 +18,9 @@ class _DonationsState extends State<Donations>
   Widget build(BuildContext context) {
     pageSize = MediaQuery.of(context).size;
 
-    return Container(
-      height: pageSize.height - 65,
+    return Scaffold(
+      body: Container(
+      height: pageSize.height,
       width: pageSize.width,
       color: Colors.white,
       child: Stack(alignment: Alignment.bottomCenter, children: [
@@ -30,7 +31,7 @@ class _DonationsState extends State<Donations>
           Text(
             "How would you like to help?",
             style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 25, color: colorOne),
+                fontWeight: FontWeight.w500, fontSize: 18, color: colorOne),
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -41,6 +42,7 @@ class _DonationsState extends State<Donations>
                   help(data, 2, height: pageSize.height / 5),
                   help(data, 3, height: pageSize.height / 5),
                 ]),
+                SizedBox(height:10),
                 Row(children: [
                   help(data, 0, height: pageSize.height / 5),
                   help(data, 1, height: pageSize.height / 5),
@@ -54,11 +56,12 @@ class _DonationsState extends State<Donations>
             child: Card(
                 elevation: 3,
                 child: FlatButton(
+                  shape: RoundedRectangleBorder(side: BorderSide(color:colorOne),borderRadius: BorderRadius.circular(4),),
                     onPressed: () {},
                     child: Text("Other",
                         style: TextStyle(fontSize: 20, color: colorOne)))),
           ),
-          Spacer(),
+          Spacer(), //edit this to avoid space
           Text("Immediate Help Required",
               style: TextStyle(
                   fontSize: 26, color: colorOne, fontWeight: FontWeight.bold)),
@@ -88,8 +91,9 @@ class _DonationsState extends State<Donations>
                           children: <Widget>[
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.fromLTRB(8,12, 8, 0),
                                 child: SingleChildScrollView(
+                                   scrollDirection: Axis.vertical,
                                     controller: _sC,
                                     // gridDelegate:
                                     //     SliverGridDelegateWithFixedCrossAxisCount(
@@ -136,7 +140,7 @@ class _DonationsState extends State<Donations>
                     return Container();
                 }))
       ]),
-    );
+    ));
   }
 }
 

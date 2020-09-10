@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common.dart';
+
 // void main() {
 //   runApp(MaterialApp(
 //     home: Explore(),
@@ -30,22 +32,25 @@ class _ExploreState extends State<Explore> {
                width: 500.0,
               color: Colors.tealAccent[700],
              child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                  SizedBox(height:40),
-                Text('Explore',style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold,),textAlign:TextAlign.start ,),
+                Text('  Explore',textAlign:TextAlign.start,style: TextStyle(fontSize: 30,color: Colors.white,fontFamily:"Poppins",fontWeight: FontWeight.bold,)),
                 SizedBox(height:10),
                 TextField(
                           decoration: InputDecoration(
-                             border: new OutlineInputBorder(
+                             enabledBorder: new OutlineInputBorder(
+                             borderSide: BorderSide(color:Colors.white),  
                              borderRadius: const BorderRadius.all(
                              const Radius.circular(40.0),
         ),
       ),
+                          border: OutlineInputBorder(),
                           filled: true,
-                          fillColor: Colors.white,
-                          prefixIcon: Icon(Icons.search,color: Colors.black,),
+                          fillColor: Colors.tealAccent[700],
+                          prefixIcon: Icon(Icons.search,color: Colors.white,size: 25,),
                           hintText: "Search", 
-                          hintStyle: TextStyle(color: Colors.grey[500],fontWeight: FontWeight.bold),                       
+                          hintStyle: TextStyle(color: Colors.white,fontFamily: "Poppins",fontSize: 20),                       
                         ),
                       ),
                                   ],
