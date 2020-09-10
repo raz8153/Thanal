@@ -30,7 +30,7 @@ class _ExploreState extends State<Explore> {
                 padding: EdgeInsets.fromLTRB(20,0,20,0),
                 height: 180.0,
                width: 500.0,
-              color: Colors.tealAccent[700],
+              color: colorOne,
              child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -47,7 +47,7 @@ class _ExploreState extends State<Explore> {
       ),
                           border: OutlineInputBorder(),
                           filled: true,
-                          fillColor: Colors.tealAccent[700],
+                          fillColor: colorOne,
                           prefixIcon: Icon(Icons.search,color: Colors.white,size: 25,),
                           hintText: "Search", 
                           hintStyle: TextStyle(color: Colors.white,fontFamily: "Poppins",fontSize: 20),                       
@@ -59,7 +59,7 @@ class _ExploreState extends State<Explore> {
         SizedBox(height:10),        
         Container(
           padding: EdgeInsets.only(left:20),
-          child: Text('Featured',style: TextStyle(fontSize:17,fontWeight: FontWeight.bold,color:Colors.tealAccent[700]
+          child: Text('Featured',style: TextStyle(fontSize:17,fontWeight: FontWeight.bold,color:colorOne
         ))
           ),            
            Container(
@@ -83,9 +83,9 @@ class _ExploreState extends State<Explore> {
            padding: EdgeInsets.only(left:20),
            child: Row(
              children: <Widget>[
-               Text('Around You',style:TextStyle(fontSize: 17,color:Colors.tealAccent[700],fontWeight:FontWeight.bold)),
+               Text('Around You',style:TextStyle(fontSize: 17,color:colorOne,fontWeight:FontWeight.bold)),
                SizedBox(width:ctwidth*0.6),
-               Icon(Icons.edit_location,color: Colors.tealAccent[700]
+               Icon(Icons.edit_location,color: colorOne
               ,),         
 
          ],
@@ -116,11 +116,11 @@ SizedBox(width:10),
 Column(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
-        Text("St.Joseph's",style:TextStyle(color:Colors.tealAccent[700]
+        Text("St.Joseph's",style:TextStyle(color:colorOne
       ,fontSize: 15,fontWeight: FontWeight.bold),),
          Row(
             children: <Widget>[
-                  Icon(Icons.location_searching,size: 12,color: Colors.tealAccent[700]
+                  Icon(Icons.location_searching,size: 12,color: colorOne
                 ,),
                   SizedBox(width:5),
                   Text("Old Age Explore",style:TextStyle(color:Colors.black,fontSize: 12),),
@@ -128,7 +128,7 @@ Column(
                 ),
           Row(
             children: <Widget>[
-                  Icon(Icons.edit_location,size: 12,color: Colors.tealAccent[700]
+                  Icon(Icons.edit_location,size: 12,color: colorOne
                 ,),
                   SizedBox(width:5),
                   Text("Near Some Junction",style:TextStyle(color:Colors.black,fontSize: 12),),
