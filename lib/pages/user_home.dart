@@ -1,10 +1,10 @@
 import 'Contribute/contribute.dart';
 import 'Explore/explore.dart';
-import 'file:///C:/Users/Aju/Desktop/PROJECTS/THANAL/Thanal/lib/pages/Home/home.dart';
-import 'file:///C:/Users/Aju/Desktop/PROJECTS/THANAL/Thanal/lib/pages/Profile/donationHistory.dart';
 import 'package:flutter/material.dart';
 import 'Notification/notification.dart';
 import 'common.dart';
+import 'Profile/donationHistory.dart';
+import 'Home/home.dart';
 
 class UserHome extends StatefulWidget {
   UserHome({Key key}) : super(key: key);
@@ -77,7 +77,7 @@ class _UserHomeState extends State<UserHome> {
         ),
 //        backgroundColor: Colors.white,
         extendBody: true,
-        extendBodyBehindAppBar: true,
+       // extendBodyBehindAppBar: true,
         body: child,
         bottomNavigationBar:
         Container(

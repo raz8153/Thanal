@@ -1,5 +1,6 @@
 import 'dart:ui' show FontWeight;
 
+import 'package:Thanal/pages/common.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -26,7 +27,7 @@ class _State extends State<HomeRequests> {
                 children: <Widget>[
 //                  Container(
 //                    padding: EdgeInsets.all(50.0),
-//                    color: Colors.tealAccent[700],
+//                    color: colorOne,
 //                    child: Text('        ThanalDonate',
 //                      style: TextStyle(
 //                        fontSize: 40.0,
@@ -38,7 +39,7 @@ class _State extends State<HomeRequests> {
 //                  ),
 
                   Container(
-                    color: Colors.tealAccent[700],
+                    color: colorOne,
                     height: 70,
                     padding: EdgeInsets.fromLTRB(70, 20, 70, 20),
                     child: Material(
@@ -53,7 +54,7 @@ class _State extends State<HomeRequests> {
 
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
-                              color: Colors.tealAccent[700],
+                              color: colorOne,
                             ),
                           ),
                         ),
@@ -69,7 +70,7 @@ class _State extends State<HomeRequests> {
                                 elevation: 10.0,
                                 margin: EdgeInsets.all(9),
                                 child: Container(
-                                    child: Row(
+                                    child: Column(
                                         children: <Widget>[
                                           Text(requests[index]["note"]),
                                           Container(
@@ -86,8 +87,8 @@ class _State extends State<HomeRequests> {
                                                         fontWeight: FontWeight
                                                             .bold,
                                                         fontSize: 15,
-                                                        color: Colors
-                                                            .tealAccent[700],
+                                                        color: colorOne
+                                                
 
                                                       )
 

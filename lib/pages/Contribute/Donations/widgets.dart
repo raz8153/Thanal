@@ -9,10 +9,10 @@ Widget help(var data, int index, {double height = 150}) {
     child: SizedBox(
       height: height,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        shape: RoundedRectangleBorder(side: BorderSide(color:colorOne),borderRadius: BorderRadius.circular(12),),
         elevation: 3,
         child: FlatButton(
-          child: Column(
+            child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Icon(
