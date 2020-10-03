@@ -36,15 +36,12 @@ class _UserHomeState extends State<UserHome> {
         print("raz1");
         child = Explore();
         break;
+
       case 2:
-        print("raz2");
-        child = Contribute();
-        break;
-      case 3:
         print("raz3");
         child = Notifications();
         break;
-      case 4:
+      case 3:
         print("raz4");
         child = Profile();
         break;
@@ -79,6 +76,13 @@ class _UserHomeState extends State<UserHome> {
         extendBody: true,
        // extendBodyBehindAppBar: true,
         body: child,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Contribute()));
+
+        },
+        backgroundColor:Colors.tealAccent[700],
+        child:Icon(Icons.add)),
         bottomNavigationBar:
         Container(
             height: 65,
@@ -107,10 +111,10 @@ class _UserHomeState extends State<UserHome> {
                       style: style,
                     ),
                   ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.add_circle_outline),
-                    title: Text('Contribute', style: style),
-                  ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(Icons.add_circle_outline),
+                  //   title: Text('Contribute', style: style),
+                  // ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.notifications),
                     title: Text('Notify', style: style),
